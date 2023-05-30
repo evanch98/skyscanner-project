@@ -2,6 +2,8 @@ import React from 'react';
 import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkCalendar from "@skyscanner/backpack-web/bpk-component-calendar";
+import format from "date-fns/format";
 
 import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 

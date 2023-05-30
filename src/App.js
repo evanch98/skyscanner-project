@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { BpkCode } from "@skyscanner/backpack-web/bpk-component-code";
 import BpkButton from "@skyscanner/backpack-web/bpk-component-button";
 import BpkText from "@skyscanner/backpack-web/bpk-component-text";
@@ -62,7 +62,7 @@ const daysOfWeek = [
 	},
 ];
 
-class App extends component {
+class App extends Component {
 	constructor() {
 		super();
 
@@ -99,9 +99,20 @@ class App extends component {
 				</header>
 				<main className={getClassName("App__main")}>
 					<BpkText tagName="p" className={getClassName("App__text")}>
-						To get started, edit <BpkCode>src/App.jsx</BpkCode> and save to
-						reload.
+						Choose a date
 					</BpkText>
+					<BpkCalendar
+						id="calendar"
+						onDateSelect={this.handleDateSelect}
+						formatMonth={formatMonth}
+						formatDateFull={formatDateFull}
+						daysOfWeek={daysOfWeek}
+						weekStartsOn={1}
+						changeMonthLabel="Change month"
+						nextMonthLabel="Next month"
+						previousMonthLabel="Previous month"
+						selectionConfiguration={this.state.selectionConfiguration}
+					/>
 					<BpkButton onClick={() => alert("It works!")}>Click me</BpkButton>
 				</main>
 			</div>
